@@ -18,7 +18,7 @@ if (!o||!t) {
   }
   t = p['theme']??st[0];
   o = p['os']??so[0];
-  o = (t==st[2])?o:so[0];
+  o = (t!=st[2])?o:so[0];
 }
 d.getElementById("InAppBrowserTheme").href = themes[o+t];
 let x = new XMLHttpRequest();
