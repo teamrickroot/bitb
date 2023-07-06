@@ -26,19 +26,4 @@ x.open("GET", "./contents/"+o+t+".html", true);
 x.onreadystatechange = function() { if (x.readyState === 4 && x.status === 200) d[b][ih] = d[b][ih]+x.responseText; };
 x.send();
 
-window.addEventListener('DOMContentLoaded', function() {
-  let observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      var addedNodes = mutation.addedNodes;
-      for (var i = 0; i < addedNodes.length; i++) {
-        if (addedNodes[i].id=="window") {
-          document.getElementById("OsWindowControl").src = "./js/"+o+t+".js";
-          document.getElementById("content").src=bd;
-          observer.disconnect();
-          return;
-        }
-      }
-    });
-  });
-  observer.observe(document.body, {childList: true});
-})
+window.addEventListener('DOMContentLoaded', function() { document.getElementById("OsWindowControl").src = "./js/"+o+t+".js"; })
