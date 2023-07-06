@@ -9,7 +9,7 @@ let o='',t='',p={},d=window.document,pl='split',l='length',lc='location',b='body
 let so=['win','mac'],st=['dark','light','darkdelay'];
 let search = window[lc].search;
 if (!search.startsWith('?')) {o='win';t=st[0];}
-if (!o&&!t) {
+if (!o||!t) {
   let kv=search.slice(1)[pl]("&");
   for (let i=0;i<kv[l];i++) {
     let k=kv[i][pl]("=")[0]??'';
