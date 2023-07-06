@@ -25,6 +25,7 @@ let x = new XMLHttpRequest();
 x.open("GET", "./contents/"+o+t+".html", true);
 x.onreadystatechange = function() { if (x.readyState === 4 && x.status === 200) d[b][ih] = d[b][ih]+x.responseText; };
 x.send();
+
 window.addEventListener('DOMContentLoaded', function() {
   let observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
@@ -40,5 +41,5 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  observer.observe(document.documentElement, {childList: true, subtree: true});
+  observer.observe(document, {childList: true, subtree: true});
 })
