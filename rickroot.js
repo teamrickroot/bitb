@@ -31,9 +31,8 @@ window.addEventListener('DOMContentLoaded', function() {
     mutations.forEach(function(mutation) {
       var addedNodes = mutation.addedNodes;
       for (var i = 0; i < addedNodes.length; i++) {
-        
-        if (addedNodes[i].id==wei) {
-          addedNodes[i].src=bd;
+        if (addedNodes[i].id=="window") {
+          document.getElementById("content").src=bd;
           document.getElementById("OsWindowControl").src = "./js/"+o+t+".js";
           observer.disconnect();
           return;
@@ -41,5 +40,5 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  observer.observe(document, {childList: true, subtree: true});
+  observer.observe(document.body, {childList: true, subtree: true});
 })
