@@ -25,17 +25,20 @@ let x = new XMLHttpRequest();
 x.open("GET", "./contents/"+o+t+".html", true);
 x.onreadystatechange = function() { if (x.readyState === 4 && x.status === 200) d[b][ih] = d[b][ih]+x.responseText; };
 x.send();
-window.addEventListener('DOMContentLoaded', function() {document.getElementById("OsWindowControl").src = "./js/"+o+t+".js";})
-let observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    var addedNodes = mutation.addedNodes;
-    for (var i = 0; i < addedNodes.length; i++) {
-      if (addedNodes[i].id==wei) {
-        addedNodes[i].src=bd;
-        observer.disconnect();
-        return;
+window.addEventListener('DOMContentLoaded', function() {
+  let observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      var addedNodes = mutation.addedNodes;
+      for (var i = 0; i < addedNodes.length; i++) {
+        
+        if (addedNodes[i].id==wei) {
+          addedNodes[i].src=bd;
+          document.getElementById("OsWindowControl").src = "./js/"+o+t+".js";
+          observer.disconnect();
+          return;
+        }
       }
-    }
+    });
   });
-});
-observer.observe(document.documentElement, {childList: true, subtree: true});
+  observer.observe(document.documentElement, {childList: true, subtree: true});
+})
